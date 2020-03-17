@@ -4,7 +4,7 @@
 /* global $ */
 
 $("#search-button").click(function(){
-    
+
     let userInput = $("#search-term").val();
     console.log(userInput);
 
@@ -17,9 +17,10 @@ $("#search-button").click(function(){
     })
     .then(function(data) {
 
-    let gifURL = data.data[0].images.original.url;
+        let gifURL = data.data[0].images.original.url;
+
             
-    $(".gifResults").append(`<img src="${gifURL}">`);
+    $(".text-center").html(`<img src="${gifURL}">`);
     
     console.log(gifURL);
 
