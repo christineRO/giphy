@@ -18,12 +18,15 @@ $("#search-button").click(function(){
     .then(function(data) {
 
         let gifURL = data.data[0].images.original.url;
+        
+        data.data.forEach(function(image){
+            $(".text-center").html(`<img src="${image.images.original.url}">`);
+        });
 
-            
-    $(".text-center").html(`<img src="${gifURL}">`);
-    
-    console.log(gifURL);
+        data.data.forEach(function(image){
+            console.log(image.images.original.url)
+        });
 
-    console.log("hi");
-});
+        console.log("hi");
+    });
 });
